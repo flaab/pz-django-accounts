@@ -69,7 +69,7 @@ if(settings.DEBUG):
 To further customize the application to do what you need, you can:
 
 - Edit the **Profile** model at *account/models.py*, adding or removing user profile fields.
-- Edit the **ProfileEditForm** at *account/forms.py*, letting your users their recently changed model data.
+- Edit the **ProfileEditForm** at *account/forms.py*, adding or removing user profile fields.
 - Add or edit views at *account/views.py*, adding functionality for authenticated users.
 - Customize the templates at *account/templates* to look they way you want.
 
