@@ -1,6 +1,6 @@
 # Yet another Django-Accounts Application
 
-A bootstrapped and complete django acccounts engine that blends into django-admin and works as desired right out of the box, without conflicting with the django-admin user experience.  It allows you to seamlessly register users into your website and it offers all the functionality registered users need: registration, login, logout, password reset, password change, dashboard, profile edition, account deactivation, account deletion, avatars and gravatars.
+A bootstrapped and complete django acccounts engine that blends into django-admin and works as desired right out of the box, without conflicting with the django-admin user experience.  It allows you to seamlessly register users into your website and it offers all the functionality registered users need: registration, login, logout, password reset, password change, dashboard, profile edition, account deactivation, account deletion, avatars, gravatars and reCaptcha protected forms.
 
 ![PZ-Django-Accounts](https://www.dropbox.com/s/5q2229bvrpsnq4q/pz-django-accounts.png?raw=1)
 
