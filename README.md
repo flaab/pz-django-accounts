@@ -46,17 +46,30 @@ Now the server is up and running and the app is available at http://127.0.0.1:80
 The above instructions will create a new Django project that will run the application. If you did that, you can skip this section. If on the other hand, you want to include the accounts application in your existing project, then another course of action is needed. Add the following lines in your *settings.py*:
 
 ```
+# Imports
+from django.contrib.messages import constants as messages
+from django.urls import reverse_lazy
+
+# Installed apps
 INSTALLED_APPS = (
     # ...
     'django.contrib.staticfiles',
     'account',
 )
+
+# Static files and media
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
+# Authentication constants
 LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 LOGIN_URL = reverse_lazy('account:login')
+
+# Email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Bootstrap messages
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
     messages.INFO: 'alert-info',
