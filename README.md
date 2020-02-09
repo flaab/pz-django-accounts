@@ -98,6 +98,7 @@ if(settings.DEBUG):
 ## Customize the application
 To further customize the application to do what you need, you can:
 
+- Configure the application constants at *account/apps.py*
 - Edit the **Profile** model at *account/models.py*, adding or removing user profile fields.
 - Edit the **ProfileEditForm** at *account/forms.py*, adding or removing user profile fields.
 - Add or edit views at *account/views.py*, adding functionality for authenticated users.
