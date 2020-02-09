@@ -66,8 +66,13 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 LOGIN_URL = reverse_lazy('account:login')
 
-# Email backend
+# Email backend 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = ‘smtp.server.com’
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ‘your_account@server.com’
+EMAIL_HOST_PASSWORD = ‘’
 
 # Bootstrap messages
 MESSAGE_TAGS = {
