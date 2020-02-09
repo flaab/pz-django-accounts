@@ -38,11 +38,11 @@ If all went well, run the server.
 ```
 $ python3 manage.py runserver
 ```
-If all went well, the server is up and running and the app is available at http://127.0.0.1:8000 and http://127.0.0.1:8000/account.
+Now the server is up and running and the app is available at http://127.0.0.1:8000 and http://127.0.0.1:8000/account.
 
 ## Running the application in a existing Django Site
 
-The above instructions will create a new Django project that will run the application. If you did that, you can skip this section. If on the other hand, you want to include the blog in your existing application, then another course of action is needed. Add the following lines in your *settings.py*:
+The above instructions will create a new Django project that will run the application. If you did that, you can skip this section. If on the other hand, you want to include the accounts application in your existing project, then another course of action is needed. Add the following lines in your *settings.py*:
 
 ```
 INSTALLED_APPS = (
