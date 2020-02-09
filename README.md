@@ -1,4 +1,4 @@
-# Yet another Django-Accounts Application
+# Yet another Django-Accounts App
 
 A bootstrapped and complete django accounts engine that blends into django-admin and works as desired right out of the box, without conflicting with the django-admin user experience.  It allows you to seamlessly register users into your website and it offers all the functionalities registered users need: registration, login with email or username, logout, password reset, password change, dashboard, profile edition, account deactivation, account deletion, avatars, gravatars and reCaptcha protected forms.
 
