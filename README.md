@@ -54,6 +54,16 @@ INSTALLED_APPS = (
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
+LOGIN_URL = reverse_lazy('account:login')
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 ```
 
 Add the following lines in your *urls.py*:
