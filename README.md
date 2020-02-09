@@ -65,6 +65,7 @@ urlpatterns = [
 if(settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 ```
+
 ## Customize the application
 To further customize the application to do what you need, you can:
 
