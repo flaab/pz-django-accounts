@@ -66,7 +66,7 @@ if(settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 ```
 
-## Customize the application
+## Customize the application
 To further customize the application to do what you need, you can:
 
 - Edit the **Profile** model at *account/models.py*, adding or removing user profile fields.
