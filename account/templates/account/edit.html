@@ -1,0 +1,23 @@
+{% extends "account/__l_base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Edit your profile - {{ block.super }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div role="main" class="col-sm-8 pr-4">
+        <div class="card pr-0 pl-0">
+            <h5 class="card-header">Edit your profile</h5>
+            <div class="card-body ml-5 mr-5 mt-4 mb-2">
+                <form action="." method="post" enctype="multipart/form-data">
+                    {{ user_form|crispy }}
+                    {{ profile_form|crispy }}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Save"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div role="sidebar" class="col-sm-4 pl-4">
+        {% include 'account/_sidebar.html' %}
+    </div>
+</div>
+{% endblock %}

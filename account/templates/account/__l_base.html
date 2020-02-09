@@ -1,0 +1,80 @@
+{% load account_tags %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% app_attr 'meta_title' %}{% endblock %}</title>
+        <link rel="shortcut icon" href="{% block favicon %}https://static.djangoproject.com/img/favicon.6dbf28c0650e.ico{% endblock %}">
+        {% block stylesheets %}
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {% endblock %}
+        {% block javascript %}
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        {% endblock %}
+        {% block extra_head %}{% endblock %}
+    </head>
+
+    <!-- === Body Start ==== -->
+    <body class="bg-light">
+        
+        <!-- ==== Flash messages ==== -->
+        {% include '_messages.html' %}
+        <!-- ==== End messages ==== -->
+
+        <!-- ==== Nav ==== -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+            <a class="navbar-brand" href="{% url 'account:dashboard' %}">
+                {% app_attr 'header_title' %}
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <span class="navbar-text">{% app_attr 'header_description' %}</span>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if request.user.is_authenticated %}
+                        <span>
+                            <img src="{{ request.user.profile.get_avatar }}" 
+                                 class="rounded-lg z-depth-0 mr-2 align-middle mt-1 border" 
+                                 alt="Avatar" height="34">
+                        </span>
+                        <li class="nav-item active">
+                            <span class="navbar-text text-white mr-3">Welcome, {{ request.user.profile.get_full_name|title }}!</span>
+                        </li>
+                        <li class="nav-item">
+                            <a role="button" class="btn btn-outline-light small ml-2" href="{% url 'account:logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account:login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account:register' %}">Register</a></li> 
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <!-- ==== End Nav ==== -->
+        
+        <!-- ==== Start Content ==== -->
+        <div class="container-fluid pr-5 pl-5" role="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- ==== End Content ==== -->
+        
+        <!-- ==== Footer ==== -->
+        <footer class="footer page-footer font-small mt-5 bg-white">
+            <div class="footer-copyright text-center py-3">
+                {% app_attr 'footer' %} &nbsp;&nbsp; 
+            </div>
+        </footer>
+        <!-- ==== Footer ==== -->
+
+    </body>
+    <!-- ==== Body End ==== -->
+</html>

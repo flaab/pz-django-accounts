@@ -1,0 +1,26 @@
+<div class="card mt-0 mb-4">
+    <!-- ==== Navigation Start === -->
+    <h5 class="card-header">Navigation</h5>
+    <div class="card-body pl-0 pt-0 pr-0 pb-0">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center pl-4">
+                <a href="{% url 'account:dashboard' %}" class="text-dark">Dashboard</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center pl-4">
+                <a href="{% url 'account:edit' %}" class="text-dark">Edit profile</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center pl-4">
+                <a href="{% url 'account:password_change' %}" class="text-dark">Change password</a>
+            </li>
+            {% if not request.user.is_superuser and not request.user.is_staff %}
+            <li class="list-group-item d-flex justify-content-between align-items-center pl-4">
+                <a href="{% url 'account:deactivate_account' %}" class="text-dark">Deactivate account</a>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center pl-4">
+                <a href="{% url 'account:delete_account' %}" class="text-dark">Delete account</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    <!-- ==== Navigation End ==== -->
+</div>

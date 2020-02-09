@@ -1,0 +1,47 @@
+{% extends "account/__l_base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Edit your profile - {{ block.super }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div role="main" class="col-sm-8 pr-4">
+        <div class="card pr-0 pl-0">
+            <h5 class="card-header">Deactivate your account</h5>
+            <div class="card-body ml-4 mr-4 mt-4 mb-3 pt-0 pl-0 pr-0 pb-0">
+                <p>Are you completely sure you want to deactivate your account? If you do... </p>
+                <ul>
+                    <li>Your account will remain inactive</li>
+                    <li>You won't be able to log-in to the site</li>
+                </ul>
+                <a data-toggle="modal" data-target="#modalDelete" href="#" role="button" class="btn btn-danger mt-3 mr-1">Yes, deactivate my account</a>
+                <a href="{% url 'account:dashboard' %}" role="button" class="btn btn-secondary mt-3">No, go back</a>
+                <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="DeleteModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-dark" id="DeleteModalTitle">We're going to miss you!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-dark">
+                                Are you completely sure you want to deactivate your account?
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{% url 'account:deactivate_account_confirm' confirm=1 %}" title="Delete">
+                                    <button type="button" class="btn btn-danger">Yes, do it already!</button>
+                                </a>
+                                <a href="{% url 'account:dashboard' %}" title="Go Back">
+                                    <button type="button" class="btn btn-secondary">No, get me out of here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div role="sidebar" class="col-sm-4 pl-4">
+        {% include 'account/_sidebar.html' %}
+    </div>
+</div>
+{% endblock %}
