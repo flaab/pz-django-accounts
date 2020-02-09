@@ -1,5 +1,6 @@
 django>=2.2.6
 django-countries
 django-resized
+crispy-forms
 hashlib
 pillow

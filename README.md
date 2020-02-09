@@ -15,6 +15,7 @@ A bootstrapped and complete django accounts engine that blends into django-admin
 - Django >= 2.2.6
 - Django-countries
 - Django-resized
+- Crispy-forms
 - Markdown
 - Hashlib
 
