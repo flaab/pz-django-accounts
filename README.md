@@ -23,7 +23,7 @@ Create a directory and clone the project.
 ```
 $ mkdir mysite
 $ cd mysite
-$ git clone 
+$ git clone https://github.com/flaab/pz-django-accounts.git 
 ```
 Create the database and tables of the application.
 ```
