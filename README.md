@@ -66,6 +66,12 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = reverse_lazy('account:dashboard')
 LOGIN_URL = reverse_lazy('account:login')
 
+# Authentication backends
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
+
 # Email backend 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = ‘smtp.server.com’
