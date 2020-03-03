@@ -54,6 +54,7 @@ from django.urls import reverse_lazy
 INSTALLED_APPS = (
     # ...
     'django.contrib.staticfiles',
+    'django_countries',
     'crispy_forms',
     'account',
 )
