@@ -54,8 +54,12 @@ from django.urls import reverse_lazy
 INSTALLED_APPS = (
     # ...
     'django.contrib.staticfiles',
+    'crispy_forms',
     'account',
 )
+
+# Crispy template pack
+CRISPY_TEMPLATE_PACK = 'bootstrap4
 
 # Static files and media
 STATIC_URL = '/static/'
