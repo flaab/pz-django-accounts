@@ -60,7 +60,7 @@ INSTALLED_APPS = (
 )
 
 # Crispy template pack
-CRISPY_TEMPLATE_PACK = 'bootstrap4
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Static files and media
 STATIC_URL = '/static/'
