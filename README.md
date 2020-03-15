@@ -1,6 +1,6 @@
 # Yet another Django-Accounts App
 
-A bootstrapped and complete django accounts engine that blends into django-admin and works as desired right out of the box, without conflicting with the django-admin user experience.  It allows you to seamlessly register users into your website and it offers all the functionalities registered users need: registration, login with email or username, logout, password reset, password change, welcome dashboard, profile edition, account deactivation, account deletion, avatars, gravatars and reCaptcha protected forms.
+A bootstrapped and complete i18n django accounts engine that blends into django-admin and works as desired right out of the box, without conflicting with the django-admin user experience.  It allows you to seamlessly register users into your website and it offers all the functionalities registered users need: registration, login with email or username, logout, password reset, password change, welcome dashboard, profile edition, account deactivation, account deletion, avatars, gravatars and reCaptcha protected forms.
 
 ![PZ-Django-Accounts](https://www.dropbox.com/s/5q2229bvrpsnq4q/pz-django-accounts.png?raw=1)
 
@@ -9,6 +9,7 @@ A bootstrapped and complete django accounts engine that blends into django-admin
 - It is a complete engine that works out of the box
 - The templates are bootstrap-ready and fully customizable
 - No conflict with the django-admin user experience
+- Internationalization ready
 
 ## Requirements
 - Python >= 3.0
@@ -20,7 +21,6 @@ A bootstrapped and complete django accounts engine that blends into django-admin
 - Hashlib
 
 ## Languages
-
 Gettext files are available for the following languages:
 
 - English
