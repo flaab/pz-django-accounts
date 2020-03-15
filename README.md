@@ -19,6 +19,21 @@ A bootstrapped and complete django accounts engine that blends into django-admin
 - Markdown
 - Hashlib
 
+## Languages
+
+Gettext files are available for the following languages:
+
+- English
+- Spanish
+- German (translation pending)
+- Italian (translation pending)
+- French (translation pending)
+- Russian (translation pending)
+- Japanese (translation pending)
+- Portuguese (translation pending)
+
+Kindly share the .po files if you create translations for these languages.
+
 ## Installation
 Create a directory and clone the project.
 ```
@@ -50,6 +65,13 @@ The above instructions will create a new Django project that will run the applic
 from django.contrib.messages import constants as messages
 from django.urls import reverse_lazy
 
+# Middleware
+MIDDLEWARE = [
+    # ...
+    'django.middleware.locale.LocaleMiddleware',  # Between session and common
+    # ...
+]
+
 # Installed apps
 INSTALLED_APPS = (
     # ...
@@ -76,6 +98,24 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 ]
+
+# Internationalization
+LANGUAGE_CODE = 'en' # Changed to en from en-us
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('de', _('German')),
+    ('it', _('Italian')),
+    ('fr', _('French')),
+    ('ru', _('Russian')),
+    ('ja', _('Japanese')),
+    ('pt', _('Portuguese')),
+)
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale/'),)
 
 # Email backend 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
