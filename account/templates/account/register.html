@@ -1,17 +1,18 @@
 {% extends "account/__l_base.html" %}
 {% load account_tags %}
 {% load crispy_forms_tags %}
-{% block title %}Registration - {{ block.super }}{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Registration" %} - {{ block.super }}{% endblock %}
 {% block content %}
 <div class="row justify-content-center">
     <div class="card col-sm-8 pr-0 pl-0">
-        <h5 class="card-header">Create an account</h5>
+        <h5 class="card-header">{% trans "Create an account" %}</h5>
         <div class="card-body ml-5 mr-5 mt-4 mb-2">
             <form action="." method="post">
                 {{ user_form|crispy }}
                 {% recaptcha_field %}
                 {% csrf_token %}
-                <p><input type="submit" value="Create"></p>
+                <p><input type="submit" value="{% trans 'Create' %}"></p>
             </form>
         </div>
     </div>

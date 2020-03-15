@@ -1,11 +1,12 @@
 {% extends "account/__l_base.html" %}
-{% block title %}Dashboard - {{ block.super }}{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Dashboard" %} - {{ block.super }}{% endblock %}
 {% block content %}
 <div class="row justify-content-center">
     <div class="card col-sm-8 pr-0 pl-0">
-        <h5 class="card-header">Congratulations!</h5>
+        <h5 class="card-header">{% trans "Congratulations!" %}</h5>
         <div class="card-body ml-5 mr-5 mt-4 mb-2">
-            <p>Your account has been successfully created. Now you can <a href="{% url 'account:login' %}">log in</a>.</p>
+            <p>{% trans "Your account has been successfully created." %} <a href="{% url 'account:login' %}">{% trans "Log in" %}</a>.</p>
         </div>
     </div>
 </div>

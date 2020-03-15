@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 class AccountConfig(AppConfig):
 
@@ -13,10 +14,10 @@ class AccountConfig(AppConfig):
     verbose_name  = "Django Accounts"
     
     # Application settings 
-    meta_title         = "DjangoAccounts"                          # Meta Title
-    header_title       = "Django<strong>Accounts</strong>"         # Header Title
-    header_description = "A reusable accounts app for Django"      # Header Description
-    footer             = "Proudly powered by PZ-Django-Accounts"   # Footer message
+    meta_title         = _("My Site")                               # Meta Title
+    header_title       = "Django<strong>Accounts</strong>"          # Header Title
+    header_description = _("A reusable accounts app for Django")    # Header Description
+    footer             = _("Proudly powered by PZ-Django-Accounts") # Footer message
 
     # Avatar image sizes
     avatar_width  = 300

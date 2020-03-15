@@ -1,16 +1,17 @@
 {% extends "account/__l_base.html" %}
-{% block title %}Dashboard - {{ block.super }}{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Dashboard" %} - {{ block.super }}{% endblock %}
 {% block content %}
 <div class="row">
     <div role="main" class="col-sm-8 pr-4">
         <div class="card pr-0 pl-0 pt-0 pb-0">
-            <h5 class="card-header">Hello, {{ request.user.profile.get_first_name }}!</h5>
+            <h5 class="card-header">{% trans "Hello" %}, {{ request.user.profile.get_first_name }}</h5>
             <div class="card-body ml-4 mr-4 mt-4 mb-3 pt-0 pl-0 pr-0 pb-0">
-            <p>This is the dashboard, which loads after a successful login.</p>
+            <p>{% trans "This is the dashboard, which loads after a successful login." %}</p>
             <ul>
-                <li>Edit this page at <i>templates/account/dashboard.html</i></li>
-                <li>Edit the sidebar at <i>templates/account/_sidebar.html</i></li>
-                <li>Edit the base template at <i>templates/account/__l_base.html</i></li>
+                <li>{% trans "Edit this page at" %}<i>templates/account/dashboard.html</i></li>
+                <li>{% trans "Edit the sidebar at" %} <i>templates/account/_sidebar.html</i></li>
+                <li>{% trans "Edit the base template at" %} <i>templates/account/__l_base.html</i></li>
             </ul>
             </div>
         </div>

@@ -1,21 +1,22 @@
 {% extends "account/__l_base.html" %}
+{% load i18n %}
 {% load account_tags %}
 {% load crispy_forms_tags %}
-{% block title %}Login - {{ block.super }}{% endblock%}
+{% block title %}{% trans "Login" %} - {{ block.super }}{% endblock%}
 {% block content %}
 <div class="row justify-content-center">
     <div class="card col-sm-8 pr-0 pl-0">
-        <h5 class="card-header">Login to your account</h5>
+        <h5 class="card-header">{% trans "Login to your account" %}</h5>
         <div class="card-body ml-5 mr-5 mt-4 mb-2">
             <form action="{% url 'account:login' %}" method="POST">
                 {{ form|crispy }}
                 {% recaptcha_field %}
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
-                <p><input type="submit" value="Login"></p>
+                <p><input type="submit" value="{% trans 'Login' %}"></p>
             </form>
-            <p><a href="{% url 'account:password_reset' %}">Forgotten your password?</a><br />
-            <a href="{% url 'account:register' %}">Create an account</a></p>
+            <p><a href="{% url 'account:password_reset' %}">{% trans "Forgotten your password?" %}</a><br />
+            <a href="{% url 'account:register' %}">{% trans "Create an account" %}</a></p>
         </div>
     </div>
 </div>

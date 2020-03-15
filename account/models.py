@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.dispatch import receiver
 from django.db.models.signals import post_save, post_delete
+from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
 from django_resized import ResizedImageField
 from django.contrib.auth.models import User
@@ -10,20 +11,21 @@ import hashlib
 
 class Profile(models.Model):
     """ User profile for users, displayed inline in admin site """
-    user    = models.OneToOneField(User, on_delete = models.CASCADE)
-    address = models.CharField(blank = True, null = True, max_length=255)
-    city    = models.CharField(blank = True, null = True, max_length=255)
-    zipcode = models.CharField(blank = True, null = True, max_length=32)
-    country_of_residence = CountryField(blank = True, null = True)
-    website = models.URLField(blank = True, null = True)
-    date_of_birth = models.DateField(blank = True, null = True)
+    user    = models.OneToOneField(User, on_delete = models.CASCADE, verbose_name = _("user"))
+    address = models.CharField(blank = True, null = True, max_length=255, verbose_name = _("address"))
+    city    = models.CharField(blank = True, null = True, max_length=255, verbose_name = _("city"))
+    zipcode = models.CharField(blank = True, null = True, max_length=32, verbose_name = _("zip Code"))
+    country_of_residence = CountryField(blank = True, null = True, verbose_name = _('country of residence'))
+    website = models.URLField(blank = True, null = True, verbose_name = _("website"))
+    date_of_birth = models.DateField(blank = True, null = True, verbose_name = _("date of birth"))
     avatar = ResizedImageField(
                 size=[apps.get_app_config('Account').avatar_width, apps.get_app_config('Account').avatar_height], 
                 crop=['middle', 'center'], 
                 upload_to = 'users/%Y/%m/%d/', 
                 force_format = 'PNG',
                 blank = True, null = True, 
-                quality = 90)
+                quality = 90,
+                verbose_name = _("Avatar"))
 
 
     def get_avatar(self):

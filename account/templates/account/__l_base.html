@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load account_tags %}
 {% load staticfiles %}
 <!DOCTYPE html>
@@ -46,14 +47,19 @@
                                  alt="Avatar" height="34">
                         </span>
                         <li class="nav-item active">
-                            <span class="navbar-text text-white mr-3">Welcome, {{ request.user.profile.get_full_name|title }}!</span>
+                            <span class="navbar-text text-white mr-3">
+                                {% trans "Welcome" %}, 
+                                {{ request.user.profile.get_full_name|title }}!
+                            </span>
                         </li>
                         <li class="nav-item">
-                            <a role="button" class="btn btn-outline-light small ml-2" href="{% url 'account:logout' %}">Logout</a>
+                            <a role="button" class="btn btn-outline-light small ml-2" href="{% url 'account:logout' %}">
+                                {% trans "Logout" %}
+                            </a>
                         </li>
                     {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account:login' %}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'account:register' %}">Register</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account:login' %}">{% trans "Login" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'account:register' %}">{% trans "Register" %}</a></li> 
                     {% endif %}
                 </ul>
             </div>

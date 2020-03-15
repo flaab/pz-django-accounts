@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 from django.contrib.messages import constants as messages
+from django.utils.translation import gettext_lazy as _
 from django.urls import reverse_lazy
 import os
 
@@ -48,6 +49,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',            # Must be between session and common
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -77,13 +79,11 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -91,10 +91,8 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -112,12 +110,22 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en' # Changed to en from en-us
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('de', _('German')),
+    ('it', _('Italian')),
+    ('fr', _('French')),
+    ('ru', _('Russian')),
+    ('ja', _('Japanese')),
+    ('pt', _('Portuguese')),
+)
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale/'),)
 
 # Bootstrap messages tags
 MESSAGE_TAGS = {

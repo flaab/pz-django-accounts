@@ -1,0 +1,457 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-15 18:02+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: account/admin.py:12
+msgid "User Profile"
+msgstr ""
+
+#: account/admin.py:13
+msgid "User Profiles"
+msgstr ""
+
+#: account/apps.py:17
+msgid "My Site"
+msgstr ""
+
+#: account/apps.py:19
+msgid "A reusable accounts app for Django"
+msgstr ""
+
+#: account/apps.py:20
+msgid "Proudly powered by PZ-Django-Accounts"
+msgstr ""
+
+#: account/forms.py:12
+msgid "Username or Email Address"
+msgstr ""
+
+#: account/forms.py:13 account/forms.py:19
+msgid "Password"
+msgstr ""
+
+#: account/forms.py:20
+msgid "Confirm password"
+msgstr ""
+
+#: account/forms.py:21 account/forms.py:39
+msgid "First name"
+msgstr ""
+
+#: account/forms.py:22 account/forms.py:40
+msgid "Last name"
+msgstr ""
+
+#: account/forms.py:23 account/forms.py:41
+msgid "Email address"
+msgstr ""
+
+#: account/forms.py:32
+msgid "Passwords do not match, please try again"
+msgstr ""
+
+#: account/forms.py:51
+msgid "Enter a valid date in YYYY-mm-dd format"
+msgstr ""
+
+#: account/forms.py:53
+msgid "Date of birth"
+msgstr ""
+
+#: account/forms.py:54 account/models.py:28
+msgid "Avatar"
+msgstr ""
+
+#: account/models.py:14
+msgid "user"
+msgstr ""
+
+#: account/models.py:15
+msgid "address"
+msgstr ""
+
+#: account/models.py:16
+msgid "city"
+msgstr ""
+
+#: account/models.py:17
+msgid "zip Code"
+msgstr ""
+
+#: account/models.py:18
+msgid "country of residence"
+msgstr ""
+
+#: account/models.py:19
+msgid "website"
+msgstr ""
+
+#: account/models.py:20
+msgid "date of birth"
+msgstr ""
+
+#: account/templates/account/__l_base.html:51
+msgid "Welcome"
+msgstr ""
+
+#: account/templates/account/__l_base.html:57
+msgid "Logout"
+msgstr ""
+
+#: account/templates/account/__l_base.html:61
+#: account/templates/account/login.html:5
+#: account/templates/account/login.html:16
+msgid "Login"
+msgstr ""
+
+#: account/templates/account/__l_base.html:62
+msgid "Register"
+msgstr ""
+
+#: account/templates/account/_sidebar.html:4
+msgid "Navigation"
+msgstr ""
+
+#: account/templates/account/_sidebar.html:8
+#: account/templates/account/dashboard.html:3
+#: account/templates/account/register_done.html:3
+msgid "Dashboard"
+msgstr ""
+
+#: account/templates/account/_sidebar.html:11
+msgid "Edit profile"
+msgstr ""
+
+#: account/templates/account/_sidebar.html:14
+msgid "Change password"
+msgstr ""
+
+#: account/templates/account/_sidebar.html:18
+msgid "Deactivate account"
+msgstr ""
+
+#: account/templates/account/_sidebar.html:21
+msgid "Delete account"
+msgstr ""
+
+#: account/templates/account/dashboard.html:8
+msgid "Hello"
+msgstr ""
+
+#: account/templates/account/dashboard.html:10
+msgid "This is the dashboard, which loads after a successful login."
+msgstr ""
+
+#: account/templates/account/dashboard.html:12
+msgid "Edit this page at"
+msgstr ""
+
+#: account/templates/account/dashboard.html:13
+msgid "Edit the sidebar at"
+msgstr ""
+
+#: account/templates/account/dashboard.html:14
+msgid "Edit the base template at"
+msgstr ""
+
+#: account/templates/account/deactivate.html:4
+#: account/templates/account/delete.html:4
+#: account/templates/account/edit.html:4 account/templates/account/edit.html:9
+msgid "Edit your profile"
+msgstr ""
+
+#: account/templates/account/deactivate.html:9
+msgid "Deactivate your account"
+msgstr ""
+
+#: account/templates/account/deactivate.html:11
+msgid ""
+"Are you completely sure you want to deactivate your account? If you do..."
+msgstr ""
+
+#: account/templates/account/deactivate.html:13
+msgid "Your account will remain inactive"
+msgstr ""
+
+#: account/templates/account/deactivate.html:14
+#: account/templates/account/delete.html:15
+msgid "You won't be able to log-in to the site"
+msgstr ""
+
+#: account/templates/account/deactivate.html:17
+msgid "Yes, deactivate my account"
+msgstr ""
+
+#: account/templates/account/deactivate.html:19
+#: account/templates/account/delete.html:20
+msgid "No, go back"
+msgstr ""
+
+#: account/templates/account/deactivate.html:24
+#: account/templates/account/delete.html:25
+msgid "We're going to miss you!"
+msgstr ""
+
+#: account/templates/account/deactivate.html:30
+msgid "Are you completely sure you want to deactivate your account?"
+msgstr ""
+
+#: account/templates/account/deactivate.html:34
+msgid "Yes, do it already!"
+msgstr ""
+
+#: account/templates/account/deactivate.html:37
+#: account/templates/account/delete.html:38
+msgid "No, get me out of here"
+msgstr ""
+
+#: account/templates/account/delete.html:9
+msgid "Delete your account"
+msgstr ""
+
+#: account/templates/account/delete.html:11
+msgid "Are you completely sure you want to delete your account? If you do..."
+msgstr ""
+
+#: account/templates/account/delete.html:13
+msgid "All your data will be lost"
+msgstr ""
+
+#: account/templates/account/delete.html:14
+msgid "Your data won't be recoverable"
+msgstr ""
+
+#: account/templates/account/delete.html:18
+msgid "Yes, delete my account"
+msgstr ""
+
+#: account/templates/account/delete.html:31
+msgid "Are you completely positive you want to delete your account?"
+msgstr ""
+
+#: account/templates/account/delete.html:35
+msgid "Yes, delete my account already!"
+msgstr ""
+
+#: account/templates/account/edit.html:15
+msgid "Save"
+msgstr ""
+
+#: account/templates/account/login.html:9
+msgid "Login to your account"
+msgstr ""
+
+#: account/templates/account/login.html:18
+msgid "Forgotten your password?"
+msgstr ""
+
+#: account/templates/account/login.html:19
+#: account/templates/account/register.html:9
+msgid "Create an account"
+msgstr ""
+
+#: account/templates/account/password_change_done.html:3
+msgid "Your password has been changed"
+msgstr ""
+
+#: account/templates/account/password_change_done.html:8
+#: account/templates/account/password_change_form.html:4
+#: account/templates/account/password_change_form.html:9
+msgid "Change your password"
+msgstr ""
+
+#: account/templates/account/password_change_done.html:10
+msgid "Congratulations! Your password has been changed successfully."
+msgstr ""
+
+#: account/templates/account/password_change_form.html:14
+#: account/templates/account/password_reset_form.html:17
+msgid "Continue"
+msgstr ""
+
+#: account/templates/account/password_reset_complete.html:3
+#: account/templates/account/password_reset_confirm.html:4
+#: account/templates/account/password_reset_form.html:5
+msgid "Password reset"
+msgstr ""
+
+#: account/templates/account/password_reset_complete.html:7
+#: account/templates/account/register_done.html:7
+msgid "Congratulations!"
+msgstr ""
+
+#: account/templates/account/password_reset_complete.html:9
+msgid "Your password has been set."
+msgstr ""
+
+#: account/templates/account/password_reset_complete.html:9
+#: account/templates/account/register_done.html:9
+msgid "Log in"
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:8
+#: account/templates/account/password_reset_done.html:2
+#: account/templates/account/password_reset_done.html:6
+#: account/templates/account/password_reset_failed.html:3
+#: account/templates/account/password_reset_failed.html:7
+#: account/templates/account/password_reset_form.html:9
+msgid "Reset your password"
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:14
+msgid "Change my password"
+msgstr ""
+
+#: account/templates/account/password_reset_confirm.html:17
+msgid ""
+"The password link was invalid, possible because it has already been used."
+msgstr ""
+
+#: account/templates/account/password_reset_done.html:8
+msgid ""
+"We've emailed you instructions for setting your password. Please check your "
+"inbox or spam folder. If you don't receive an email, please make sure you've "
+"entered the address you registered with."
+msgstr ""
+
+#: account/templates/account/password_reset_email.html:1
+msgid "Someone asked for password reset for email"
+msgstr ""
+
+#: account/templates/account/password_reset_email.html:1
+msgid "Follow the link below"
+msgstr ""
+
+#: account/templates/account/password_reset_email.html:4
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: account/templates/account/password_reset_failed.html:10
+msgid "ReCAPTCHA failed. Are you human? If so, please"
+msgstr ""
+
+#: account/templates/account/password_reset_failed.html:11
+msgid "try again"
+msgstr ""
+
+#: account/templates/account/password_reset_form.html:11
+msgid "Enter your email address below to reset your password."
+msgstr ""
+
+#: account/templates/account/register.html:5
+msgid "Registration"
+msgstr ""
+
+#: account/templates/account/register.html:15
+msgid "Create"
+msgstr ""
+
+#: account/templates/account/register_done.html:9
+msgid "Your account has been successfully created."
+msgstr ""
+
+#: account/views.py:63
+msgid "Your account has been disabled and is no longer active."
+msgstr ""
+
+#: account/views.py:65
+msgid "Login failed, invalid username or password. Both are case-sensitive!"
+msgstr ""
+
+#: account/views.py:67
+msgid "Validation failed, please correct the errors below."
+msgstr ""
+
+#: account/views.py:69 account/views.py:102
+msgid "ReCAPTCHA failed. Are you human? If so, please try again."
+msgstr ""
+
+#: account/views.py:100
+msgid "Some errors prevented your registration, please find details below."
+msgstr ""
+
+#: account/views.py:130
+msgid "Your profile has been successfully updated, thank you!"
+msgstr ""
+
+#: account/views.py:132
+msgid ""
+"Some errors prevented your profile from updating, please find details below."
+msgstr ""
+
+#: account/views.py:158
+msgid "Your user profile is \"superuser\" or \"staff\" and cannot be deleted."
+msgstr ""
+
+#: account/views.py:165
+msgid "Your account has been successfully deleted. Goodbye!"
+msgstr ""
+
+#: account/views.py:167 account/views.py:199
+msgid "Your user does not exist anymore!"
+msgstr ""
+
+#: account/views.py:169
+msgid "Unexpected error deleting your account."
+msgstr ""
+
+#: account/views.py:189
+msgid ""
+"Your user profile is \"superuser\" or \"staff\" and cannot be deactivated."
+msgstr ""
+
+#: account/views.py:197
+msgid "Your account has been successfully deactivated. Goodbye!"
+msgstr ""
+
+#: account/views.py:201
+msgid "Unexpected error deactivating your account."
+msgstr ""
+
+#: mysite/settings.py:120
+msgid "English"
+msgstr ""
+
+#: mysite/settings.py:121
+msgid "Spanish"
+msgstr ""
+
+#: mysite/settings.py:122
+msgid "German"
+msgstr ""
+
+#: mysite/settings.py:123
+msgid "Italian"
+msgstr ""
+
+#: mysite/settings.py:124
+msgid "French"
+msgstr ""
+
+#: mysite/settings.py:125
+msgid "Russian"
+msgstr ""
+
+#: mysite/settings.py:126
+msgid "Japanese"
+msgstr ""
+
+#: mysite/settings.py:127
+msgid "Portuguese"
+msgstr ""

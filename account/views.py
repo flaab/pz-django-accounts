@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
+from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from django.contrib.auth.views import PasswordResetView
 from .decorators import login_excluded, check_recaptcha
+from django.utils.translation import gettext_lazy as _
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.apps import apps 
@@ -59,13 +60,13 @@ def user_login(request):
                         login(request, user)
                         return redirect('account:dashboard')
                     else: # Inactive user
-                        messages.error(request, 'Your account has been disabled and is no longer active.')
+                        messages.error(request, _('Your account has been disabled and is no longer active.'))
                 else: # Login failed
-                    messages.error(request, 'Login failed, invalid username or password. Both are case-sensitive!')
+                    messages.error(request, _('Login failed, invalid username or password. Both are case-sensitive!'))
             else: # Validation failed
-                messages.error(request, 'Validation failed, please correct the errors below.')
+                messages.error(request, _('Validation failed, please correct the errors below.'))
         else: # Recaptcha failed
-            messages.error(request, 'ReCAPTCHA failed. Are you human? If so, please try again.') 
+            messages.error(request, _('ReCAPTCHA failed. Are you human? If so, please try again.')) 
     else:   # Form not received
         form = LoginForm()
     
@@ -96,9 +97,9 @@ def register(request):
                 new_user.save()
                 return render(request, 'account/register_done.html', {'user_form': user_form})
             else: # Form is not valid
-                messages.error(request, 'Some errors prevented your registration, please find details below.')
+                messages.error(request, _('Some errors prevented your registration, please find details below.'))
         else: # Recaptcha failed
-            messages.error(request, 'ReCAPTCHA failed. Are you human? If so, please try again.') 
+            messages.error(request, _('ReCAPTCHA failed. Are you human? If so, please try again.')) 
     else: # No post received
         user_form = UserRegistrationForm()
     
@@ -126,9 +127,9 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile has been successfully updated, thank you!')
+            messages.success(request, _('Your profile has been successfully updated, thank you!'))
         else: 
-            messages.error(request, 'Some errors prevented your profile from updating, please find details below.')
+            messages.error(request, _('Some errors prevented your profile from updating, please find details below.'))
     else: # Form not received
         user_form = UserEditForm(instance = request.user)
     
@@ -154,18 +155,18 @@ def delete(request, confirm = 0):
 
         # Ignore staff and superusers
         if(request.user.is_staff or request.user.is_superuser):
-            messages.error(request, 'Your user profile is "superuser" or "staff" and cannot be deleted.')
+            messages.error(request, _('Your user profile is "superuser" or "staff" and cannot be deleted.'))
             return redirect('account:dashboard')
         else: # Logs out and tries to delete the user
             try:
                 user = request.user
                 logout(request)
                 user.delete()
-                messages.success(request, 'Your account has been successfully deleted. Goodbye!')
+                messages.success(request, _('Your account has been successfully deleted. Goodbye!'))
             except user.DoesNotExist:
-                messages.error(request, 'Your user does not exist anymore!')
+                messages.error(request, _('Your user does not exist anymore!'))
             except Exception as e:
-                messages.error(request, 'Unexpected error deleting your account.')
+                messages.error(request, _('Unexpected error deleting your account.'))
             
             # Exception or not, session is closed. Go to login.
             return redirect('account:login')
@@ -185,7 +186,7 @@ def deactivate(request, confirm = 0):
     if(confirm == 1):    
         # Ignore staff and superusers
         if(request.user.is_staff or request.user.is_superuser):
-            messages.error(request, 'Your user profile is "superuser" or "staff" and cannot be deactivated.')
+            messages.error(request, _('Your user profile is "superuser" or "staff" and cannot be deactivated.'))
             return redirect('account:dashboard')
         else: # Logs out and tries to delete the user
             try:
@@ -193,11 +194,11 @@ def deactivate(request, confirm = 0):
                 logout(request)
                 user.is_active = False
                 user.save()
-                messages.success(request, 'Your account has been successfully deactivated. Goodbye!')
+                messages.success(request, _('Your account has been successfully deactivated. Goodbye!'))
             except user.DoesNotExist:
-                messages.error(request, 'Your user does not exist anymore!')
+                messages.error(request, _('Your user does not exist anymore!'))
             except Exception as e:
-                messages.error(request, 'Unexpected error deactivating your account.')
+                messages.error(request, _('Unexpected error deactivating your account.'))
             
             # Exception or not, session is closed. Go to login.
             return redirect('account:login')
